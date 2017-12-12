@@ -2,6 +2,22 @@ html, body {
 	height: 100%;
 }
 
+.container-fluid {
+	width: 100%;
+}
+
 .row {
+	margin: 0;
+}
+
+.view {
 	height: 100vh;
+}
+
+.first-view, .done {
+	background: linear-gradient(to bottom right, #530060, #E10A89);
+}
+
+.col.s10.offset-s1 {
+	padding: 0;
 }
