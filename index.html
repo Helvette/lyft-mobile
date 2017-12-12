@@ -3,22 +3,136 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lyft</title>
-	<!-- viewport, cdn a boostrap y link a mis estilos -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- viewport, cdn a materialize y link a mis estilos -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="row first-view vcenter">
-			<div class="lyft col-xs-8 col-xs-offset-2">
-				<img src="assets/images/logo.png" alt="Lyft" class="img-responsive">
+		<!-- primera vista, logo -->
+		<div class="view row first-view valign-wrapper">
+			<div class="col s8 offset-s2">
+				<img src="assets/images/logo.png" alt="Lyft" class="responsive-img">
+			</div>
+		</div>
+		<!-- segunda vista, ingresa o regístrate -->
+		<div class="view row second-view hide">
+			<div class="row">
+				<div class="col s8 offset-s2">
+					<img src="assets/images/moustache.png" alt="" class="responsive-img">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s4 offset-s2">
+					<button>Login</button>
+				</div>
+				<div class="col s4">
+					<button id="sing-up-btn">Sing up</button>
+				</div>
+			</div>
+		</div>
+		<!-- tercera vista, datos para registrarse -->
+		<div class="view row sing-up hide">
+			<div class="row">
+				<header class="col s12">
+					<h2>Sing Up</h2>
+					<sub>Blablabla</sub>
+					<div class="divider"></div>
+				</header>
+			</div>
+			<div class="col s10 offset-s1">
+				<div class="row valign-wrapper">
+					<div class="col s3">
+						<button>Country</button>
+					</div>
+					<div class="col s9">
+						<input type="text" placeholder="HOLA" id="phone">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+					<div class="col s12">
+						<button class="next" id="number-next" disabled="disabled">Next</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- cuarta vista, comprobar código -->
+		<div class="view row check-code hide">
+			<div class="row">
+				<header class="col s12">
+					<h2></h2>
+					<sub></sub>
+					<div class="divider"></div>
+				</header>
+			</div>
+			<div class="row col s10 offset-s1">
+				<div class="row">
+					<span class="col s6">Lab - </span>
+					<input class="col s2" type="number">
+					<input class="col s2" type="number">
+					<input class="col s2" type="number">
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<p>Enter the code sent to +52</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<button>Resend Code</button>
+				</div>
+				<div class="col s12">
+					<button class="next" id="code-next">Next</button>
+				</div>
+			</div>
+		</div>
+		<!-- quinta vista, ingresar nombre y correo, terminar el registro -->
+		<div class="view row mail-name hide">
+			<div class="row">
+				<header class="col s12">
+					
+				</header>
+			</div>
+			<div class="row col s10 offset-s1">
+				<div class="row">
+					<div class="col s12 name">
+						<input class="col s6" type="text">
+						<input type="text" class="col s6">
+					</div>
+					<div class="col s12 e-mail">
+						<input type="text">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<p>
+							<input type="checkbox" class="filled-in terms" id="filled-in-box"/>
+							<label for="filled-in-box">I agree to Lyft's <a href="#">Terms of Service</a></label>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<button class="next" id="mail-next" disabled="disabled">Next</button>
+				</div>
+			</div>
+		</div>
+		<!-- sexta vista, todo listo -->
+		<div class="view row done valign-wrapper hide">
+			<div class="col s8 offset-s2">
+				<img src="assets/images/logo.png" alt="Lyft" class="responsive-img">
 			</div>
 		</div>
 	</div>
 
-
-
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 </html>
