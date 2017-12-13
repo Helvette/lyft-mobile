@@ -10,15 +10,21 @@ $(document).ready(function(){
 		$(".first-view").fadeIn();
 	}
 	var secondView = function(){
-		$(".second-view").show();
+		$(".second-view").fadeIn();
 	}
 	setTimeout(firstView, 3500);
 	setTimeout(secondView, 4000);
 
 // empezando el registro
 	$("#sing-up-btn").click(function(){
-		$(".second-view").hide();
-		$(".sing-up").show();
+		function forHide(){
+			$(".second-view").hide();
+		}
+		function forShow(){
+			$(".sing-up").show()
+		}
+		setTimeout(forHide, 150);
+		setTimeout(forShow, 300);
 	});
 
 // deshabilitando y habilitando botones
@@ -54,11 +60,16 @@ $(document).ready(function(){
 	// clickeando cualquier botón .next
 	$(".next").click(function(){
 		var forHide = $(this).parents()[($(this).parents().length) - 4];
-		console.log(forHide);
-		$(forHide).hide();
-		var forShow = $(forHide).next();
-		console.log(forShow);
-		$(forShow).show();
+		var hiding = function(){
+			$(forHide).hide();
+		}
+		var showing = function(){
+			var forShow = $(forHide).next();
+			$(forShow).show();
+		}
+		setTimeout(hiding, 200);
+		setTimeout(showing, 200);
+		
 	});
 
 	// clickeando #number-next y habilitando/deshabilitando dicho botón

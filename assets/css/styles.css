@@ -20,9 +20,16 @@ html, body {
 }
 
 .first-view, .done {
-	background: linear-gradient(to bottom right, #530060, #E10A89);
+	background: linear-gradient(324deg, #530060, #e10a89);
+	background-size: 600% 600%;
+	animation: AnimationName 6s ease infinite;
 }
 
+@keyframes AnimationName {
+	0%{background-position:13% 0%}
+	50%{background-position:88% 100%}
+	100%{background-position:13% 0%}
+}
 .col.s10.offset-s1 {
 	padding: 0;
 }
@@ -46,28 +53,31 @@ html, body {
 
 .second-view .buttons {
 	position: absolute;
-	bottom: 30px;
-	padding: 0 20.5px;
+	bottom: 20px;
+	padding: 0 8.3333%;
 }
 
-.second-view div.col.s6 {
-	padding: 0 5px;
+.second-view .buttons div.col.s12 {
+	padding: 0;
 }
 
 .buttons button {
-	color: white;
+	color: #E10A89;
 	font-size: 16px;
 	font-weight: 500;
-	padding: 18px 0;
+	padding: 10px 0;
 	text-transform: uppercase;
-	background: transparent;
+	background-color: white;
 	border: 2px solid white;
 	width: 100%;
 	box-shadow: -1px 4px 18px #530060;
+	height: 100%;
+	margin-bottom: 10px;
 }
 
-.buttons button:hover, .buttons button:active {
-	transform: scale(1.1);
+.buttons button:hover, .buttons button:active, .buttons button:focus {
+	color: white;
+	background:transparent;
 	box-shadow: -1px 4px 24px #530060;
 }
 
