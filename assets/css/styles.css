@@ -10,8 +10,13 @@ html, body {
 	margin: 0;
 }
 
-.view {
+.view, .first-view {
 	height: 100vh;
+	position: relative;
+}
+
+.view {
+	padding-top: 15px;
 }
 
 .first-view, .done {
@@ -20,4 +25,54 @@ html, body {
 
 .col.s10.offset-s1 {
 	padding: 0;
+}
+
+/* segunda vista */
+.second-view {
+	background-image: url(../images/background-lyft.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.second-view p {
+	color: white;
+	font-size: 24px;
+	font-family: "Signika", sans-serif;
+	font-weight: 600;
+	margin: 100px 0;
+	padding: 10px 0;
+	border: 3px dotted white;
+}
+
+.second-view .buttons {
+	position: absolute;
+	bottom: 30px;
+	padding: 0 20.5px;
+}
+
+.second-view div.col.s6 {
+	padding: 0 5px;
+}
+
+.buttons button {
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 18px 0;
+	text-transform: uppercase;
+	background: transparent;
+	border: 2px solid white;
+	width: 100%;
+	box-shadow: -1px 4px 18px #530060;
+}
+
+.buttons button:hover, .buttons button:active {
+	transform: scale(1.1);
+	box-shadow: -1px 4px 24px #530060;
+}
+
+.prev {
+	position: absolute;
+	top: 10px;
+	left: 10px;
 }

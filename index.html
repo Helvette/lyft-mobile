@@ -7,33 +7,37 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Signika:400,600" rel="stylesheet">
 </head>
 <body>
 	<div class="container-fluid">
 		<!-- primera vista, logo -->
-		<div class="view row first-view valign-wrapper">
+		<div class="row first-view valign-wrapper">
 			<div class="col s8 offset-s2">
 				<img src="assets/images/logo.png" alt="Lyft" class="responsive-img">
 			</div>
 		</div>
 		<!-- segunda vista, ingresa o regístrate -->
-		<div class="view row second-view hide">
+		<div class="view row second-view">
 			<div class="row">
-				<div class="col s8 offset-s2">
-					<img src="assets/images/moustache.png" alt="" class="responsive-img">
+				<div class="col s10 offset-s1 center-align">
+					<p>Rock out, then ride home.</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s4 offset-s2">
+			<div class="row buttons col s12">
+				<div class="col s6">
 					<button>Login</button>
 				</div>
-				<div class="col s4">
+				<div class="col s6">
 					<button id="sing-up-btn">Sing up</button>
 				</div>
 			</div>
 		</div>
 		<!-- tercera vista, datos para registrarse -->
-		<div class="view row sing-up hide">
+		<div class="view row sing-up">
+			<div class="prev">
+				<button class="prev-btn"><i class="fas fa-caret-square-left"></i></button>
+			</div>
 			<div class="row">
 				<header class="col s12">
 					<h2>Sing Up</h2>
@@ -46,8 +50,9 @@
 					<div class="col s3">
 						<button>Country</button>
 					</div>
-					<div class="col s9">
-						<input type="text" placeholder="HOLA" id="phone">
+					<div class="col s9 input-field">
+						<input type="tel" placeholder="HOLA" id="phone">
+						<label for="phone" data-error="wrong" data-success="right">Phone Number</label>
 					</div>
 				</div>
 				<div class="row">
@@ -61,7 +66,10 @@
 			</div>
 		</div>
 		<!-- cuarta vista, comprobar código -->
-		<div class="view row check-code hide">
+		<div class="view row check-code">
+			<div class="prev">
+				<button class="prev-btn"><i class="fas fa-caret-square-left"></i></button>
+			</div>
 			<div class="row">
 				<header class="col s12">
 					<h2></h2>
@@ -72,9 +80,9 @@
 			<div class="row col s10 offset-s1">
 				<div class="row">
 					<span class="col s6">Lab - </span>
-					<input class="col s2" type="number">
-					<input class="col s2" type="number">
-					<input class="col s2" type="number">
+					<input id="digit-one" class="digit col s2" type="text">
+					<input id="digit-two" class="digit col s2" type="text">
+					<input id="digit-three" class="digit col s2" type="text">
 				</div>
 				<div class="row">
 					<div class="col s12">
@@ -84,15 +92,18 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<button>Resend Code</button>
+					<button id="resend">Resend Code</button>
 				</div>
 				<div class="col s12">
-					<button class="next" id="code-next">Next</button>
+					<button class="next" id="code-next" disabled="disabled">Next</button>
 				</div>
 			</div>
 		</div>
 		<!-- quinta vista, ingresar nombre y correo, terminar el registro -->
-		<div class="view row mail-name hide">
+		<div class="view row mail-name">
+			<div class="prev">
+				<button class="prev-btn"><i class="fas fa-caret-square-left"></i></button>
+			</div>
 			<div class="row">
 				<header class="col s12">
 					
@@ -101,11 +112,18 @@
 			<div class="row col s10 offset-s1">
 				<div class="row">
 					<div class="col s12 name">
-						<input class="col s6" type="text">
-						<input type="text" class="col s6">
+						<div class="col s6 input-field">
+							<input type="text" class="account validate" id="name-input">
+							<label for="name-input" data-error="wrong" data-success="right">Name</label>
+						</div>
+						<div class="col s6 input-field">
+							<input type="text" class="account validate" id="lastname-input">
+							<label for="lastname-input" data-error="wrong" data-success="right">Lastname</label>
+						</div>
 					</div>
-					<div class="col s12 e-mail">
-						<input type="text">
+					<div class="col s12 e-mail input-field">
+						<input type="email" class="account validate" id="mail-input">
+						<label for="mail-input" data-error="wrong" data-success="right">Email</label>
 					</div>
 				</div>
 				<div class="row">
@@ -124,7 +142,10 @@
 			</div>
 		</div>
 		<!-- sexta vista, todo listo -->
-		<div class="view row done valign-wrapper hide">
+		<div class="view row done valign-wrapper">
+			<div class="reset">
+				<button id="reset-btn"><i class="fas fa-sign-out-alt"></i></button>
+			</div>
 			<div class="col s8 offset-s2">
 				<img src="assets/images/logo.png" alt="Lyft" class="responsive-img">
 			</div>
@@ -132,7 +153,10 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+
+	<script src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 </html>
