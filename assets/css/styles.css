@@ -2,6 +2,10 @@ html, body {
 	height: 100%;
 }
 
+div.big {
+	display:none;
+}
+
 .container-fluid {
 	width: 100%;
 }
@@ -20,16 +24,18 @@ html, body {
 }
 
 .first-view, .done {
-	background: linear-gradient(324deg, #530060, #e10a89);
-	background-size: 600% 600%;
-	animation: AnimationName 6s ease infinite;
+	background: linear-gradient(150deg, #e10a89, #530060);
+  background-size: 400% 400%;
+	animation: AnimationName 22s ease infinite;
+
 }
 
 @keyframes AnimationName {
-	0%{background-position:13% 0%}
-	50%{background-position:88% 100%}
-	100%{background-position:13% 0%}
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
 }
+
 .col.s10.offset-s1 {
 	padding: 0;
 }
@@ -85,4 +91,24 @@ html, body {
 	position: absolute;
 	top: 10px;
 	left: 10px;
+}
+
+@media (min-width: 600px) {
+	.container-fluid {
+		display: none;
+	}
+
+	div.big {
+		background: linear-gradient(324deg, #530060, #e10a89);
+		background-size: 600% 600%;
+		animation: AnimationName 6s ease infinite;
+		margin: 0;
+		display: table;
+		color: white;
+		height: 100vh;
+	}
+
+	div.big h3 {
+		margin: 250px 50px;
+	}
 }
