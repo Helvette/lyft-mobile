@@ -49,7 +49,6 @@ $(document).ready(function(){
 			}
 		});
 		$(".terms").click(function(){
-			console.log(this);
 			if ($(this).is(":checked") && $("#name-input").val().length !== 0
 				&& $("#lastname-input").val().length !== 0
 				&& $("#mail-input").val().length !== 0){
@@ -94,7 +93,6 @@ $(document).ready(function(){
 			var digitTwo = Math.floor(Math.random() * (max - min)) + min;
 			var digitThree = Math.floor(Math.random() * (max - min)) + min;
 			newArray.push(digitOne, digitTwo, digitThree);
-			console.log(newArray);
 		}
 		var getAlert = function(array){
 			for (i = 0 ; i < array.length ; i++){
@@ -133,9 +131,7 @@ $(document).ready(function(){
 		$(".prev-btn").click(function(){
 			$("input").val("");
 			var forHide = $(this).parents()[1];
-			console.log(forHide);
 			$(forHide).hide();
-			console.log($(forHide).siblings());
 			var forShow = $(forHide).prev();
 			$(forShow).show();
 		});
