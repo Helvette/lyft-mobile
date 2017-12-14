@@ -14,6 +14,7 @@ div.big {
 	margin: 0;
 }
 
+/* todas las vistas */
 .view, .first-view {
 	height: 100vh;
 	position: relative;
@@ -23,21 +24,94 @@ div.big {
 	padding-top: 15px;
 }
 
-.first-view, .done {
-	background: linear-gradient(150deg, #e10a89, #530060);
-  background-size: 400% 400%;
-	animation: AnimationName 22s ease infinite;
-
-}
-
-@keyframes AnimationName {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
-}
-
 .col.s10.offset-s1 {
 	padding: 0;
+	margin-top: 30px;
+}
+
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 26px;
+	font-family: "Signika", sans-serif;
+	color:#f50057;
+	margin-top: 32px;
+	margin-bottom: 15px;
+}
+
+p, sub {
+	color: #9e9e9e;
+	text-align: center;
+}
+
+sub {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+}
+
+.divider {
+	margin: 10px 0;
+}
+
+.prev {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+button.prev-btn.btn.pink.accent-3 {
+	padding: 0 10px;
+	line-height: 1px;
+}
+
+.next, #resend {
+	width: 100%;
+	margin: 6px 0;
+	font-size: 16px;
+	height: 46px;
+}
+
+input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label {
+	color: #f50057;
+}
+
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]) {
+	border-bottom: 1px solid #f50057;
+	box-shadow: 0 1px 0 0 #f50057;
+}
+
+/* primera y última vista */
+.first-view, .done {
+	background: linear-gradient(150deg, #e10a89, #530060);
+	background-size: 400% 400%;
+	animation: AnimationName 22s ease infinite;
+}
+
+#reset-btn {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+div.row.done {
+	padding: 100px 0;
+}
+
+div.row.done .col {
+	margin-bottom: 40px;
+}
+
+div.row.done p {
+	letter-spacing: .5px;
+	font-family: "Signika", sans-serif;
+	color: white;
+	font-size: 16px;
 }
 
 /* segunda vista */
@@ -87,12 +161,55 @@ div.big {
 	box-shadow: -1px 4px 24px #530060;
 }
 
-.prev {
-	position: absolute;
-	top: 10px;
-	left: 10px;
+/* sign-up view */
+div.col.s6.input-field.name {
+	padding: 0 3px 0 0;
 }
 
+div.col.s6.input-field.lastname {
+	padding: 0 0 0 3px;
+}
+
+#country {
+	visibility: hidden;
+}
+
+.country-select .country-list {
+	width: 170px;
+}
+
+.sing-up .col.s3 {
+	padding: 0;
+}
+
+.row.check-code .row .col.s2:not(.lab) {
+	margin-left: 0;
+}
+
+.row.check-code .row .col.s2, .col.s3.lab {
+	padding: 0 2px;
+}
+
+/* check-code view */
+[type="checkbox"].filled-in:checked+label:after {
+	border: 2px solid #4CAF50;
+	background-color: #4CAF50;
+}
+
+.lab {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 16px;
+	color: #f50057;
+}
+
+@keyframes AnimationName {
+	0%{background-position:49% 0%}
+	50%{background-position:52% 100%}
+	100%{background-position:49% 0%}
+}
+
+/* medias */
 @media (min-width: 600px) {
 	.container-fluid {
 		display: none;

@@ -6,6 +6,8 @@
 	<!-- viewport, cdn a materialize y link a mis estilos -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- plugin countries -->
+	<link rel="stylesheet" href="assets/country-select-js-master/build/css/countrySelect.min.css">
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Signika:400,600" rel="stylesheet">
 </head>
@@ -35,54 +37,62 @@
 		</div>
 		<!-- tercera vista, datos para registrarse -->
 		<div class="view row sing-up">
-			<div class="prev btn-floating btn-large waves-effect waves-ligh">
-				<button class="prev-btn"><i class="fas fa-caret-square-left"></i></button>
+			<div class="prev">
+				<button class="prev-btn btn pink accent-3"><i class="fas fa-angle-left"></i></button>
 			</div>
 			<div class="row">
 				<header class="col s12">
-					<h2>Sing Up</h2>
-					<sub>Blablabla</sub>
+					<h2>What's your number?</h2>
+					<sub>Join now for free credits!</sub>
 					<div class="divider"></div>
 				</header>
 			</div>
 			<div class="col s10 offset-s1">
 				<div class="row valign-wrapper">
 					<div class="col s3">
-						<button>Country</button>
+						<input type="text" id="country">
 					</div>
 					<div class="col s9 input-field">
-						<input type="tel" placeholder="HOLA" id="phone">
+						<input type="tel" placeholder="Phone Number" id="phone">
 						<label for="phone" data-error="wrong" data-success="right">Phone Number</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col s12">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<p>We'll text a code to verify your phone number</p>
 					</div>
-					<div class="col s12">
-						<button class="next" id="number-next" disabled="disabled">Next</button>
-					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<button class="next btn pink accent-3" id="number-next" disabled="disabled">Next</button>
 				</div>
 			</div>
 		</div>
 		<!-- cuarta vista, comprobar código -->
 		<div class="view row check-code">
 			<div class="prev">
-				<button class="prev-btn"><i class="fas fa-caret-square-left"></i></button>
+				<button class="prev-btn btn pink accent-3"><i class="fas fa-angle-left"></i></button>
 			</div>
 			<div class="row">
 				<header class="col s12">
-					<h2></h2>
-					<sub></sub>
+					<h2>Verify Phone Number</h2>
+					<sub>Join now for free credits!</sub>
 					<div class="divider"></div>
 				</header>
 			</div>
 			<div class="row col s10 offset-s1">
-				<div class="row">
-					<span class="col s6">Lab - </span>
-					<input id="digit-one" class="digit col s2" type="text">
-					<input id="digit-two" class="digit col s2" type="text">
-					<input id="digit-three" class="digit col s2" type="text">
+				<div class="row valign-wrapper">
+					<span class="col s3 offset-s1 lab center-align">Lab - </span>
+					<div class="digits col s2">
+						<input id="digit-one" class="digit" type="text">
+					</div>
+					<div class="digits col s2">
+						<input id="digit-two" class="digit" type="text">
+					</div>
+					<div class="digits col s2">
+						<input id="digit-three" class="digit" type="text">
+					</div>
 				</div>
 				<div class="row">
 					<div class="col s12">
@@ -92,31 +102,33 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<button id="resend">Resend Code</button>
+					<button id="resend" class="btn pink accent-3">Resend Code</button>
 				</div>
 				<div class="col s12">
-					<button class="next" id="code-next" disabled="disabled">Next</button>
+					<button class="next btn pink accent-3" id="code-next" disabled="disabled">Next</button>
 				</div>
 			</div>
 		</div>
 		<!-- quinta vista, ingresar nombre y correo, terminar el registro -->
 		<div class="view row mail-name">
 			<div class="prev">
-				<button class="prev-btn"><i class="fas fa-caret-square-left"></i></button>
+				<button class="prev-btn btn pink accent-3"><i class="fas fa-angle-left"></i></button>
 			</div>
 			<div class="row">
 				<header class="col s12">
-					
+					<h2>Sign Up</h2>
+					<sub>Join now for free credits!</sub>
+					<div class="divider"></div>
 				</header>
 			</div>
 			<div class="row col s10 offset-s1">
 				<div class="row">
 					<div class="col s12 name">
-						<div class="col s6 input-field">
+						<div class="col s6 input-field name">
 							<input type="text" class="account validate" id="name-input">
 							<label for="name-input" data-error="wrong" data-success="right">Name</label>
 						</div>
-						<div class="col s6 input-field">
+						<div class="col s6 input-field lastname">
 							<input type="text" class="account validate" id="lastname-input">
 							<label for="lastname-input" data-error="wrong" data-success="right">Lastname</label>
 						</div>
@@ -137,30 +149,30 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<button class="next" id="mail-next" disabled="disabled">Next</button>
+					<button class="next btn pink accent-3" id="mail-next" disabled="disabled">Next</button>
 				</div>
 			</div>
 		</div>
 		<!-- sexta vista, todo listo -->
-		<div class="view row done valign-wrapper">
-			<div class="reset">
-				<button id="reset-btn"><i class="fas fa-sign-out-alt"></i></button>
-			</div>
+		<div class="view row done center-align">
+			<button id="reset-btn" class="reset-btn btn transparent"><i class="fas fa-sign-out-alt"></i></button>
 			<div class="col s8 offset-s2">
 				<img src="assets/images/logo.png" alt="Lyft" class="responsive-img">
+			</div>
+			<div class="reset col s10 offset-s1">
+				<p>Congratulations! your registration has been successfully submitted.</p>
 			</div>
 		</div>
 	</div>
 	<div class="big center-align">
 		<div class="alert">
-			<h3>Esta aplicación solo está disponible para dipositivos móviles.</h3>
+			<h3>Esta aplicación solo está disponible para dispositivos móviles.</h3>
 		</div>
 	</div>
-
-	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+	<script src="assets/country-select-js-master/build/js/countrySelect.min.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 </html>
