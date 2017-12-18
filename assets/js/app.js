@@ -130,6 +130,7 @@ $(document).ready(function(){
 		*/
 		$(".prev-btn").click(function(){
 			$("input").val("");
+			$(".next").attr("disabled", true);
 			var forHide = $(this).parents()[1];
 			$(forHide).hide();
 			var forShow = $(forHide).prev();
@@ -145,7 +146,7 @@ $(document).ready(function(){
 			setTimeout(firstView, 3500);
 			setTimeout(secondView, 4000);
 			$("input").val("");
-			$(".terms").removeAttr("checked");
+			$(".terms").prop("checked", false);
 			$(".next").attr("disabled", true);
 		});
 });
